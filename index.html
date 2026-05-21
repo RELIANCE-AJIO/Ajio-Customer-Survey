@@ -19,11 +19,7 @@ font-family:'Inter',sans-serif;
 
 body{
 background:
-radial-gradient(circle at top left,#ffffff,#f5f5f5 30%,#e6e6e6 100%);
-min-height:100vh;
-padding:50px 20px;
-color:#111;
-overflow-x:hidden;
+radial-gradient(circle at top left,#D9E8FF 0%,#F3F7FF 35%,#FFFFFF 100%);
 }
 
 body::before{
@@ -74,6 +70,101 @@ line-height:1.1;
 }
 
 .hero p{
+  .hero-tag{
+
+display:inline-block;
+
+padding:10px 18px;
+
+border-radius:999px;
+
+background:white;
+
+color:#102A5E;
+
+font-weight:700;
+
+font-size:13px;
+
+margin-bottom:22px;
+
+box-shadow:
+0 8px 20px rgba(16,42,94,.08);
+
+}
+
+.hero h1{
+
+font-size:68px;
+
+font-weight:900;
+
+line-height:1;
+
+margin-bottom:20px;
+
+}
+
+.hero h1 span{
+
+background:
+linear-gradient(
+90deg,
+#102A5E,
+#2563EB
+);
+
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+
+}
+
+.hero-stats{
+
+display:flex;
+
+justify-content:center;
+
+gap:16px;
+
+margin-top:35px;
+
+flex-wrap:wrap;
+
+}
+
+.stat-card{
+
+background:white;
+
+padding:18px 24px;
+
+border-radius:18px;
+
+box-shadow:
+0 10px 30px rgba(16,42,94,.08);
+
+min-width:130px;
+
+}
+
+.stat-card h2{
+
+color:#102A5E;
+
+font-size:24px;
+
+margin-bottom:4px;
+
+}
+
+.stat-card span{
+
+font-size:13px;
+
+color:#64748B;
+
+}
 max-width:750px;
 margin:auto;
 color:#666;
@@ -128,22 +219,35 @@ box-shadow:0 15px 35px rgba(0,0,0,.08);
 }
 
 .question-number{
+
+width:52px;
+height:52px;
+
 display:flex;
+
 align-items:center;
 justify-content:center;
 
-width:40px;
-height:40px;
+border-radius:16px;
 
-border-radius:50%;
+background:
+linear-gradient(
+135deg,
+#102A5E,
+#2563EB
+);
 
-background:#000;
-color:#fff;
+color:white;
 
-font-size:14px;
-font-weight:700;
+font-size:16px;
 
-margin-bottom:15px;
+font-weight:800;
+
+margin-bottom:18px;
+
+box-shadow:
+0 10px 25px rgba(37,99,235,.20);
+
 }
 
 .question h3{
@@ -153,22 +257,35 @@ margin-bottom:18px;
 }
 
 .option{
+
 display:flex;
+
 align-items:center;
 
-padding:14px 16px;
+padding:16px 18px;
 
-border-radius:14px;
+margin-bottom:12px;
 
-margin-bottom:10px;
+background:white;
 
-background:#fafafa;
+border:2px solid #EEF3FF;
 
-border:1px solid #efefef;
+border-radius:18px;
+
+transition:.25s;
 
 cursor:pointer;
 
-transition:.25s ease;
+}
+
+.option:hover{
+
+border-color:#2563EB;
+
+background:#F8FBFF;
+
+transform:translateX(4px);
+
 }
 
 .option:hover{
@@ -217,22 +334,40 @@ text-align:center;
 }
 
 button{
-background:linear-gradient(135deg,#000,#333);
+
+background:
+linear-gradient(
+135deg,
+#102A5E,
+#2563EB
+);
+
 color:white;
+
 border:none;
 
-padding:18px 40px;
+padding:18px 46px;
 
 font-size:16px;
-font-weight:700;
 
-border-radius:50px;
+font-weight:800;
+
+border-radius:999px;
 
 cursor:pointer;
 
-transition:.3s ease;
+transition:.3s;
+
 }
 
+button:hover{
+
+transform:translateY(-3px);
+
+box-shadow:
+0 20px 40px rgba(37,99,235,.30);
+
+}
 button:hover{
 transform:translateY(-3px);
 box-shadow:0 12px 25px rgba(0,0,0,.25);
@@ -260,7 +395,13 @@ font-size:22px;
 
 </style>
 </head>
-
+<div style="
+text-align:center;
+margin-top:40px;
+color:#64748B;
+font-size:14px;">
+Thank you for helping us create a better AJIO experience ❤️
+</div>
 <body>
 
 <div class="logo">
@@ -268,14 +409,41 @@ AJIO CUSTOMER EXPERIENCE
 </div>
 
 <div class="hero">
-<h1>Shape the Future of AJIO</h1>
+
+<div class="hero-tag">
+✨ Premium Customer Experience Survey
+</div>
+
+<h1>
+Your Style.
+<span>Your Voice.</span>
+</h1>
 
 <p>
-As one of our valued customers, your feedback helps us create a smarter,
-faster and more personalized shopping experience.
-This survey takes less than 3 minutes and every response directly contributes
-to improving AJIO for you.
+You're among AJIO's valued customers and your feedback helps us create a more personalized,
+faster and inspiring shopping experience.
+This survey takes less than 3 minutes and directly shapes what comes next.
 </p>
+
+<div class="hero-stats">
+
+<div class="stat-card">
+<h2>3 Min</h2>
+<span>Survey Time</span>
+</div>
+
+<div class="stat-card">
+<h2>8</h2>
+<span>Questions</span>
+</div>
+
+<div class="stat-card">
+<h2>100%</h2>
+<span>Anonymous</span>
+</div>
+
+</div>
+
 </div>
 
 <div class="progress-bar">
