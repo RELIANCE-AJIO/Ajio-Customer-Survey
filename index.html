@@ -3,76 +3,192 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>AJIO Customer Experience Survey</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
 <style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Inter',sans-serif;
+}
+
 body{
-    font-family: Arial, sans-serif;
-    background:#f5f7fa;
-    margin:0;
-    padding:0;
+background:linear-gradient(135deg,#f8f8f8,#ececec);
+min-height:100vh;
+padding:40px 20px;
+color:#1a1a1a;
+}
+
+.logo{
+text-align:center;
+font-size:40px;
+font-weight:800;
+letter-spacing:6px;
+margin-bottom:15px;
+color:#111;
+}
+
+.hero{
+text-align:center;
+margin-bottom:30px;
+}
+
+.hero h1{
+font-size:38px;
+font-weight:700;
+margin-bottom:10px;
+}
+
+.hero p{
+font-size:16px;
+color:#666;
+max-width:700px;
+margin:auto;
+line-height:1.6;
+}
+
+.progress-bar{
+height:8px;
+max-width:900px;
+margin:0 auto 30px auto;
+background:#e5e5e5;
+border-radius:50px;
+overflow:hidden;
+}
+
+.progress-fill{
+width:100%;
+height:100%;
+background:#000;
 }
 
 .container{
-    max-width:900px;
-    margin:40px auto;
-    background:white;
-    padding:40px;
-    border-radius:16px;
-    box-shadow:0 5px 20px rgba(0,0,0,0.08);
-}
-
-h1{
-    color:#222;
+max-width:900px;
+margin:auto;
+background:#fff;
+border-radius:24px;
+padding:50px;
+box-shadow:
+0 10px 30px rgba(0,0,0,0.08),
+0 2px 8px rgba(0,0,0,0.05);
 }
 
 .question{
-    margin-top:35px;
+background:#fafafa;
+padding:24px;
+margin-top:25px;
+border-radius:16px;
+border:1px solid #ededed;
+transition:all .25s ease;
+}
+
+.question:hover{
+transform:translateY(-2px);
+box-shadow:0 6px 20px rgba(0,0,0,0.05);
 }
 
 .question h3{
-    color:#111;
+font-size:20px;
+line-height:1.5;
+margin-bottom:18px;
+color:#111;
 }
 
 .option{
-    margin:8px 0;
+padding:8px 0;
+font-size:15px;
+color:#444;
+}
+
+.option:hover{
+color:#000;
+}
+
+input[type="checkbox"],
+input[type="radio"]{
+margin-right:10px;
+transform:scale(1.15);
+cursor:pointer;
 }
 
 textarea{
-    width:100%;
-    height:120px;
-    padding:12px;
-    border-radius:8px;
-    border:1px solid #ccc;
+width:100%;
+min-height:140px;
+padding:15px;
+border-radius:12px;
+border:1px solid #d9d9d9;
+font-size:15px;
+margin-top:10px;
+}
+
+textarea:focus{
+outline:none;
+border-color:#000;
 }
 
 button{
-    background:black;
-    color:white;
-    padding:14px 24px;
-    border:none;
-    border-radius:8px;
-    cursor:pointer;
-    margin-top:25px;
+background:#000;
+color:#fff;
+border:none;
+padding:16px 32px;
+font-size:16px;
+font-weight:600;
+border-radius:12px;
+cursor:pointer;
+transition:all .25s ease;
+margin-top:35px;
 }
 
 button:hover{
-    opacity:0.9;
+background:#222;
+transform:translateY(-2px);
 }
-</style>
 
+@media(max-width:768px){
+
+.container{
+padding:25px;
+}
+
+.hero h1{
+font-size:28px;
+}
+
+.logo{
+font-size:30px;
+}
+
+.question h3{
+font-size:18px;
+}
+
+}
+
+</style>
 </head>
 
 <body>
 
-<div class="container">
+<div class="logo">AJIO</div>
 
+<div class="hero">
 <h1>Help us build a better AJIO for you ❤️</h1>
-
 <p>
 You've been one of our valued customers, and we'd love to hear about your shopping experience.
 This short survey will take less than 3 minutes and your feedback will directly help us improve AJIO.
 </p>
+</div>
+
+<div class="progress-bar">
+<div class="progress-fill"></div>
+</div>
+
+<div class="container">
 
 <form>
 
@@ -87,7 +203,7 @@ This short survey will take less than 3 minutes and your feedback will directly 
 </div>
 
 <div class="question">
-<h3>Q2. What keeps you coming back to AJIO? (Select up to 3)</h3>
+<h3>Q2. Which of the following do you value the most while shopping on AJIO? (Select up to 3)</h3>
 
 <div class="option"><input type="checkbox"> Wide variety of brands</div>
 <div class="option"><input type="checkbox"> Affordable prices & deals</div>
@@ -104,89 +220,77 @@ This short survey will take less than 3 minutes and your feedback will directly 
 <div class="question">
 <h3>Q3. If AJIO could improve ONE thing for you, what would make the biggest difference?</h3>
 
-<select>
-<option>Faster delivery</option>
-<option>Better discounts & rewards</option>
-<option>Better product recommendations</option>
-<option>Improved quality assurance</option>
-<option>Easier returns/refunds</option>
-<option>More exclusive brands/styles</option>
-<option>Better search and filters</option>
-<option>More accurate sizing guidance</option>
-<option>Other</option>
-</select>
+<div class="option"><input type="radio" name="q3"> Faster delivery</div>
+<div class="option"><input type="radio" name="q3"> Better discounts & rewards</div>
+<div class="option"><input type="radio" name="q3"> Better product recommendations</div>
+<div class="option"><input type="radio" name="q3"> Improved quality assurance</div>
+<div class="option"><input type="radio" name="q3"> Easier returns/refunds</div>
+<div class="option"><input type="radio" name="q3"> More exclusive brands/styles</div>
+<div class="option"><input type="radio" name="q3"> Better search and filters</div>
+<div class="option"><input type="radio" name="q3"> More accurate sizing guidance</div>
+<div class="option"><input type="radio" name="q3"> Other</div>
 </div>
 
 <div class="question">
-<h3>Q4. Which improvement in delivery experience would make the biggest difference for you? (Select up to 2)</h3>
+<h3>Q4. Whenever you need assistance, we want support to feel effortless and reassuring. If AJIO could improve one aspect of customer support, what would make the biggest difference for you?</h3>
 
-<div class="option"><input type="checkbox"> Lower delivery charges</div>
-<div class="option"><input type="checkbox"> Faster delivery timelines</div>
-<div class="option"><input type="checkbox"> More accurate delivery date commitments</div>
-<div class="option"><input type="checkbox"> Same-day / Express delivery options</div>
-<div class="option"><input type="checkbox"> Better delivery tracking and updates</div>
-<div class="option"><input type="checkbox"> Flexible delivery slots</div>
-<div class="option"><input type="checkbox"> My current experience is already satisfactory</div>
+<div class="option"><input type="radio" name="q4"> Faster response times</div>
+<div class="option"><input type="radio" name="q4"> Better resolution on the first interaction</div>
+<div class="option"><input type="radio" name="q4"> Easier access to a support representative</div>
+<div class="option"><input type="radio" name="q4"> More proactive updates on my issue</div>
+<div class="option"><input type="radio" name="q4"> Better understanding of my concern</div>
+<div class="option"><input type="radio" name="q4"> Dedicated support for loyal customers</div>
+<div class="option"><input type="radio" name="q4"> My support experience has been satisfactory</div>
 </div>
 
 <div class="question">
-<h3>Q5. If AJIO could improve one aspect of customer support, what would make the biggest difference for you?</h3>
+<h3>Q5. When returning or exchanging a product, which part of the process feels most frustrating or time-consuming? (Select up to 2)</h3>
 
-<div class="option"><input type="radio" name="q5"> Faster response times</div>
-<div class="option"><input type="radio" name="q5"> Better resolution on first interaction</div>
-<div class="option"><input type="radio" name="q5"> Easier access to support</div>
-<div class="option"><input type="radio" name="q5"> More proactive updates</div>
-<div class="option"><input type="radio" name="q5"> Better understanding of my concern</div>
-<div class="option"><input type="radio" name="q5"> Dedicated support for loyal customers</div>
-<div class="option"><input type="radio" name="q5"> My support experience has been satisfactory</div>
-</div>
-
-<div class="question">
-<h3>Q6. When returning or exchanging a product, which part of the process feels most frustrating or time-consuming? (Select up to 2)</h3>
-
-<div class="option"><input type="checkbox"> Scheduling pickup</div>
-<div class="option"><input type="checkbox"> Waiting for collection</div>
+<div class="option"><input type="checkbox"> Scheduling the pickup</div>
+<div class="option"><input type="checkbox"> Waiting for the product to be collected</div>
 <div class="option"><input type="checkbox"> Lack of visibility on return status</div>
-<div class="option"><input type="checkbox"> Waiting for quality checks</div>
-<div class="option"><input type="checkbox"> Delays in receiving refund</div>
-<div class="option"><input type="checkbox"> Difficulty finding return/exchange options</div>
-<div class="option"><input type="checkbox"> Contacting support for updates</div>
-<div class="option"><input type="checkbox"> No challenges faced</div>
+<div class="option"><input type="checkbox"> Waiting for quality checks to be completed</div>
+<div class="option"><input type="checkbox"> Delays in receiving the refund</div>
+<div class="option"><input type="checkbox"> Difficulty finding the right return/exchange option</div>
+<div class="option"><input type="checkbox"> Having to contact customer support for updates</div>
+<div class="option"><input type="checkbox"> I have not faced any challenges with returns/exchanges</div>
 </div>
 
 <div class="question">
-<h3>Q7. Which new features would excite you the most? (Select up to 3)</h3>
+<h3>Q6. Which new features would excite you the most? (Select up to 3)</h3>
 
 <div class="option"><input type="checkbox"> 30-minute Express Delivery</div>
 <div class="option"><input type="checkbox"> Same-Day Delivery</div>
-<div class="option"><input type="checkbox"> VIP Membership</div>
-<div class="option"><input type="checkbox"> Early Access to Sales</div>
-<div class="option"><input type="checkbox"> AI Stylist Recommendations</div>
-<div class="option"><input type="checkbox"> Virtual Try-On</div>
-<div class="option"><input type="checkbox"> Style Subscriptions</div>
-<div class="option"><input type="checkbox"> Guaranteed Exchange within 24 hours</div>
-<div class="option"><input type="checkbox"> Dedicated Premium Support</div>
-<div class="option"><input type="checkbox"> Outfit Inspiration</div>
+<div class="option"><input type="checkbox"> VIP Membership with exclusive benefits</div>
+<div class="option"><input type="checkbox"> Early access to sales & launches</div>
+<div class="option"><input type="checkbox"> AI-based personal stylist recommendations</div>
+<div class="option"><input type="checkbox"> Virtual Try-On for fashion products</div>
+<div class="option"><input type="checkbox"> Style subscriptions curated for me</div>
+<div class="option"><input type="checkbox"> Guaranteed exchange within 24 hours</div>
+<div class="option"><input type="checkbox"> Dedicated premium customer support</div>
+<div class="option"><input type="checkbox"> Outfit inspiration based on previous purchases</div>
 <div class="option"><input type="checkbox"> None of the above</div>
 </div>
 
 <div class="question">
-<h3>Q8. Would you consider paying for premium benefits?</h3>
+<h3>Q7. If AJIO offered a premium membership with benefits like faster delivery, exclusive discounts, early access to sales and priority support, would you consider subscribing?</h3>
 
-<div class="option"><input type="radio" name="q8"> Definitely Yes</div>
-<div class="option"><input type="radio" name="q8"> Probably Yes</div>
-<div class="option"><input type="radio" name="q8"> Not Sure</div>
-<div class="option"><input type="radio" name="q8"> Probably No</div>
-<div class="option"><input type="radio" name="q8"> Definitely No</div>
+<div class="option"><input type="radio" name="q7"> Definitely Yes</div>
+<div class="option"><input type="radio" name="q7"> Probably Yes</div>
+<div class="option"><input type="radio" name="q7"> Not Sure</div>
+<div class="option"><input type="radio" name="q7"> Probably No</div>
+<div class="option"><input type="radio" name="q7"> Definitely No</div>
 </div>
 
 <div class="question">
-<h3>Q9. If you could change or add one thing to AJIO tomorrow, what would it be and why?</h3>
+<h3>Q8. If you could change or add one thing to AJIO tomorrow, what would it be and why?</h3>
 
-<textarea placeholder="Share your thoughts here..."></textarea>
+<textarea placeholder="Share your thoughts with us..."></textarea>
 </div>
 
-<button type="submit">Submit Survey</button>
+<center>
+<button type="submit">Submit Feedback</button>
+</center>
 
 </form>
 
