@@ -20,11 +20,10 @@ font-family:'Inter',sans-serif;
 }
 
 body{
-
 background:
 linear-gradient(
-rgba(5,15,40,.68),
-rgba(5,15,40,.68)
+rgba(5,15,40,.70),
+rgba(5,15,40,.70)
 ),
 url('ajio-bg.png');
 
@@ -33,163 +32,66 @@ background-position:center;
 background-attachment:fixed;
 
 min-height:100vh;
-
 padding:40px 20px;
-
-overflow-x:hidden;
 color:white;
-}
-
-body::before{
-content:"";
-position:fixed;
-width:500px;
-height:500px;
-border-radius:50%;
-background:rgba(255,255,255,.08);
-top:-180px;
-left:-120px;
-filter:blur(90px);
-z-index:-1;
-}
-
-body::after{
-content:"";
-position:fixed;
-width:450px;
-height:450px;
-border-radius:50%;
-background:rgba(37,99,235,.15);
-bottom:-180px;
-right:-120px;
-filter:blur(90px);
-z-index:-1;
 }
 
 .logo{
 text-align:center;
-font-size:26px;
+font-size:28px;
 font-weight:900;
 letter-spacing:8px;
 margin-bottom:20px;
 }
 
 .hero{
+text-align:center;
 max-width:1000px;
 margin:auto;
-text-align:center;
 margin-bottom:35px;
 }
 
-.hero-tag{
-display:inline-block;
-padding:10px 20px;
-background:rgba(255,255,255,.15);
-backdrop-filter:blur(12px);
-border-radius:999px;
-font-size:14px;
-font-weight:700;
-margin-bottom:20px;
-}
-
 .hero h1{
-font-size:62px;
+font-size:60px;
 font-weight:900;
-line-height:1.05;
-margin-bottom:18px;
+margin-bottom:15px;
 }
 
-.hero h1 span{
-background:linear-gradient(
-90deg,
-#ffffff,
-#8FC4FF
-);
+.hero span{
+background:linear-gradient(90deg,#ffffff,#8FC4FF);
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
 }
 
 .hero p{
-font-size:18px;
-max-width:850px;
+max-width:800px;
 margin:auto;
 line-height:1.7;
-color:rgba(255,255,255,.92);
-}
-
-.hero-stats{
-display:flex;
-justify-content:center;
-gap:18px;
-margin-top:30px;
-flex-wrap:wrap;
-}
-
-.stat-card{
-background:rgba(255,255,255,.14);
-backdrop-filter:blur(15px);
-padding:18px 26px;
-border-radius:20px;
-min-width:140px;
-}
-
-.stat-card h2{
-font-size:28px;
-font-weight:800;
-}
-
-.progress{
-max-width:1000px;
-height:10px;
-margin:35px auto;
-background:rgba(255,255,255,.20);
-border-radius:999px;
-overflow:hidden;
-}
-
-.progress span{
-display:block;
-width:100%;
-height:100%;
-background:linear-gradient(
-90deg,
-#ffffff,
-#8FC4FF
-);
+font-size:18px;
 }
 
 .container{
 max-width:1000px;
 margin:auto;
-padding:50px;
-border-radius:35px;
+
 background:rgba(255,255,255,.92);
 backdrop-filter:blur(22px);
+
+padding:50px;
+border-radius:35px;
+
 color:#111827;
-box-shadow:0 25px 70px rgba(0,0,0,.35);
+
+box-shadow:
+0 25px 70px rgba(0,0,0,.35);
 }
 
 .question{
 background:white;
 padding:28px;
-border-radius:24px;
 margin-bottom:22px;
+border-radius:24px;
 border:1px solid #E9EEF8;
-position:relative;
-}
-
-.question::before{
-content:"";
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:5px;
-background:linear-gradient(
-90deg,
-#102A5E,
-#2563EB
-);
 }
 
 .qnum{
@@ -198,14 +100,16 @@ height:50px;
 display:flex;
 align-items:center;
 justify-content:center;
-border-radius:16px;
+
 background:linear-gradient(
 135deg,
 #102A5E,
 #2563EB
 );
+
 color:white;
 font-weight:800;
+border-radius:16px;
 margin-bottom:18px;
 }
 
@@ -215,21 +119,24 @@ margin-bottom:18px;
 line-height:1.5;
 }
 
+.required{
+color:#ff4d6d;
+}
+
 .option{
 display:flex;
 align-items:center;
+
 padding:16px;
 margin-bottom:12px;
-background:#F8FAFF;
-border:2px solid #E8EEF8;
-border-radius:18px;
-cursor:pointer;
-transition:.25s;
-}
 
-.option:hover{
-border-color:#2563EB;
-transform:translateX(4px);
+background:#F8FAFF;
+
+border:2px solid #E8EEF8;
+
+border-radius:18px;
+
+cursor:pointer;
 }
 
 .option input{
@@ -238,13 +145,17 @@ transform:scale(1.15);
 accent-color:#102A5E;
 }
 
+.option:hover{
+border-color:#2563EB;
+}
+
 textarea{
 width:100%;
 min-height:160px;
 padding:18px;
+font-size:15px;
 border-radius:18px;
 border:1px solid #DDE4F3;
-font-size:15px;
 }
 
 button{
@@ -253,24 +164,36 @@ background:linear-gradient(
 #102A5E,
 #2563EB
 );
+
 color:white;
+
 border:none;
+
 padding:18px 48px;
-border-radius:999px;
+
 font-size:16px;
+
 font-weight:800;
+
+border-radius:999px;
+
 cursor:pointer;
 }
 
 .center{
 text-align:center;
-margin-top:15px;
+margin-top:20px;
 }
 
 .footer{
 text-align:center;
 margin-top:30px;
 color:#64748B;
+}
+
+input:invalid,
+textarea:invalid{
+outline:none;
 }
 
 @media(max-width:768px){
@@ -301,19 +224,11 @@ AJIO
 
 <div class="hero">
 
-
-
 <h1>
-Help us improve your AJIO experience </span>
+Help us improve your AJIO experience</span>
 </h1>
 
 
-</div>
-
-</div>
-
-<div class="progress">
-<span></span>
 </div>
 
 <div class="container">
@@ -331,32 +246,38 @@ value="New AJIO Survey Response">
 
 <h3>
 What do you like most about shopping on AJIO?
-(Select up to 2)
+<span class="required">*</span>
+(Select at least 1)
 </h3>
 
 <label class="option">
-<input type="checkbox"
+<input
+type="checkbox"
 name="liked_features"
-value="Brands & Styles">
+value="Brands & Styles"
+required>
 Brands & Styles
 </label>
 
 <label class="option">
-<input type="checkbox"
+<input
+type="checkbox"
 name="liked_features"
 value="Great Deals">
 Great Deals
 </label>
 
 <label class="option">
-<input type="checkbox"
+<input
+type="checkbox"
 name="liked_features"
 value="Easy Shopping">
 Easy Shopping
 </label>
 
 <label class="option">
-<input type="checkbox"
+<input
+type="checkbox"
 name="liked_features"
 value="Quality & Trust">
 Quality & Trust
@@ -372,38 +293,45 @@ Quality & Trust
 
 <h3>
 What is the one thing AJIO should improve the most?
+<span class="required">*</span>
 </h3>
 
 <label class="option">
-<input type="radio"
+<input
+type="radio"
 name="improvement_area"
-value="Delivery">
+value="Delivery"
+required>
 Delivery
 </label>
 
 <label class="option">
-<input type="radio"
+<input
+type="radio"
 name="improvement_area"
 value="Discounts & Rewards">
 Discounts & Rewards
 </label>
 
 <label class="option">
-<input type="radio"
+<input
+type="radio"
 name="improvement_area"
 value="Recommendations & Sizing">
 Recommendations & Sizing
 </label>
 
 <label class="option">
-<input type="radio"
+<input
+type="radio"
 name="improvement_area"
 value="Quality, Returns & Refunds">
 Quality, Returns & Refunds
 </label>
 
 <label class="option">
-<input type="radio"
+<input
+type="radio"
 name="improvement_area"
 value="No major improvement needed">
 No major improvement needed
@@ -419,38 +347,45 @@ No major improvement needed
 
 <h3>
 If you ever need help, what would improve your experience the most?
+<span class="required">*</span>
 </h3>
 
 <label class="option">
-<input type="radio"
+<input
+type="radio"
 name="customer_support"
-value="Faster Replies">
+value="Faster Replies"
+required>
 Faster Replies
 </label>
 
 <label class="option">
-<input type="radio"
+<input
+type="radio"
 name="customer_support"
 value="Faster Solutions">
 Faster Solutions
 </label>
 
 <label class="option">
-<input type="radio"
+<input
+type="radio"
 name="customer_support"
 value="Better Updates">
 Better Updates
 </label>
 
 <label class="option">
-<input type="radio"
+<input
+type="radio"
 name="customer_support"
 value="Premium Support">
 Premium Support
 </label>
 
 <label class="option">
-<input type="radio"
+<input
+type="radio"
 name="customer_support"
 value="Satisfied">
 I am satisfied with the current support experience
@@ -466,39 +401,46 @@ I am satisfied with the current support experience
 
 <h3>
 What is the biggest challenge when returning or exchanging a product?
-(Select up to 2)
+<span class="required">*</span>
+(Select at least 1)
 </h3>
 
 <label class="option">
-<input type="checkbox"
+<input
+type="checkbox"
 name="returns_experience"
-value="Pickup Takes Time">
+value="Pickup Takes Time"
+required>
 Pickup Takes Time
 </label>
 
 <label class="option">
-<input type="checkbox"
+<input
+type="checkbox"
 name="returns_experience"
 value="Refund Takes Time">
 Refund Takes Time
 </label>
 
 <label class="option">
-<input type="checkbox"
+<input
+type="checkbox"
 name="returns_experience"
 value="Not Enough Updates">
 Not Enough Updates
 </label>
 
 <label class="option">
-<input type="checkbox"
+<input
+type="checkbox"
 name="returns_experience"
 value="Return Process is Confusing">
 Return Process is Confusing
 </label>
 
 <label class="option">
-<input type="checkbox"
+<input
+type="checkbox"
 name="returns_experience"
 value="No Issues">
 I have not faced any issues with returns or exchanges
@@ -513,39 +455,46 @@ I have not faced any issues with returns or exchanges
 
 <h3>
 Which new feature would interest you the most?
+<span class="required">*</span>
 (Select up to 2)
 </h3>
 
 <label class="option">
-<input type="checkbox"
+<input
+type="checkbox"
 name="new_features"
-value="Faster Delivery">
+value="Faster Delivery"
+required>
 Faster Delivery
 </label>
 
 <label class="option">
-<input type="checkbox"
+<input
+type="checkbox"
 name="new_features"
 value="Premium Membership">
 Premium Membership
 </label>
 
 <label class="option">
-<input type="checkbox"
+<input
+type="checkbox"
 name="new_features"
 value="AI Styling & Try-On">
 AI Styling & Try-On
 </label>
 
 <label class="option">
-<input type="checkbox"
+<input
+type="checkbox"
 name="new_features"
 value="Easier Returns & Support">
 Easier Returns & Support
 </label>
 
 <label class="option">
-<input type="checkbox"
+<input
+type="checkbox"
 name="new_features"
 value="Satisfied">
 I am satisfied with the current features
@@ -561,38 +510,45 @@ I am satisfied with the current features
 
 <h3>
 Would you pay for a premium membership with benefits like faster delivery, special offers and priority support?
+<span class="required">*</span>
 </h3>
 
 <label class="option">
-<input type="radio"
+<input
+type="radio"
 name="premium_membership"
-value="Definitely Yes">
+value="Definitely Yes"
+required>
 Definitely Yes
 </label>
 
 <label class="option">
-<input type="radio"
+<input
+type="radio"
 name="premium_membership"
 value="Probably Yes">
 Probably Yes
 </label>
 
 <label class="option">
-<input type="radio"
+<input
+type="radio"
 name="premium_membership"
 value="Not Sure">
 Not Sure
 </label>
 
 <label class="option">
-<input type="radio"
+<input
+type="radio"
 name="premium_membership"
 value="No">
 No
 </label>
 
 <label class="option">
-<input type="radio"
+<input
+type="radio"
 name="premium_membership"
 value="Satisfied Without Premium">
 I am satisfied with the current experience and do not need additional benefits
@@ -608,21 +564,24 @@ I am satisfied with the current experience and do not need additional benefits
 
 <h3>
 If you could change one thing about AJIO, what would it be?
+<span class="required">*</span>
 </h3>
 
 <textarea
 name="final_suggestion"
-placeholder="Share your thoughts, ideas or suggestions here..."></textarea>
+placeholder="Share your thoughts, ideas or suggestions here..."
+required></textarea>
 
 </div>
 
 <!-- Thank You Redirect -->
 
-<input type="hidden"
+<input
+type="hidden"
 name="_next"
 value="https://snayinijoardar.github.io/Ajio-Customer-Survey/thankyou.html">
 
-<!-- Submit Button -->
+<!-- Submit -->
 
 <div class="center">
 
@@ -639,6 +598,61 @@ Submit Feedback →
 </div>
 
 </div>
+
+<!-- Validation Script -->
+
+<script>
+
+function limitCheckboxGroup(groupName,maxAllowed){
+
+const checkboxes=
+document.querySelectorAll(
+'input[name="'+groupName+'"]'
+);
+
+checkboxes.forEach(box=>{
+
+box.addEventListener('change',()=>{
+
+const checked=
+document.querySelectorAll(
+'input[name="'+groupName+'"]:checked'
+);
+
+if(checked.length>maxAllowed){
+
+box.checked=false;
+
+alert(
+'You can select a maximum of '
++ maxAllowed +
+' options.'
+);
+
+}
+
+});
+
+});
+
+}
+
+limitCheckboxGroup(
+'liked_features',
+2
+);
+
+limitCheckboxGroup(
+'returns_experience',
+2
+);
+
+limitCheckboxGroup(
+'new_features',
+2
+);
+
+</script>
 
 </body>
 
