@@ -20,10 +20,11 @@ font-family:'Inter',sans-serif;
 }
 
 body{
+
 background:
 linear-gradient(
-rgba(5,15,40,.70),
-rgba(5,15,40,.70)
+rgba(4,18,45,.72),
+rgba(4,18,45,.72)
 ),
 url('ajio-bg.png');
 
@@ -34,89 +35,116 @@ background-attachment:fixed;
 min-height:100vh;
 padding:40px 20px;
 color:white;
+
 }
 
 .logo{
 text-align:center;
-font-size:28px;
-font-weight:900;
-letter-spacing:8px;
-margin-bottom:20px;
+margin-bottom:25px;
+}
+
+.ajio-logo{
+width:240px;
+max-width:85%;
+height:auto;
+
+background:white;
+
+padding:18px 30px;
+
+border-radius:22px;
+
+box-shadow:
+0 10px 40px rgba(0,0,0,.25);
 }
 
 .hero{
 text-align:center;
-max-width:1000px;
+max-width:900px;
 margin:auto;
 margin-bottom:35px;
 }
 
 .hero h1{
-font-size:60px;
+font-size:52px;
 font-weight:900;
-margin-bottom:15px;
-}
-
-.hero span{
-background:linear-gradient(90deg,#ffffff,#8FC4FF);
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
+margin-bottom:12px;
 }
 
 .hero p{
-max-width:800px;
-margin:auto;
-line-height:1.7;
 font-size:18px;
+line-height:1.7;
+opacity:.95;
 }
 
 .container{
+
 max-width:1000px;
 margin:auto;
 
-background:rgba(255,255,255,.92);
-backdrop-filter:blur(22px);
+background:rgba(255,255,255,.95);
 
-padding:50px;
+backdrop-filter:blur(18px);
+
+padding:45px;
+
 border-radius:35px;
 
 color:#111827;
 
 box-shadow:
 0 25px 70px rgba(0,0,0,.35);
+
 }
 
 .question{
+
 background:white;
+
 padding:28px;
+
 margin-bottom:22px;
+
 border-radius:24px;
-border:1px solid #E9EEF8;
+
+border:1px solid #E6EDF7;
+
 }
 
 .qnum{
-width:50px;
-height:50px;
+
+width:52px;
+height:52px;
+
 display:flex;
 align-items:center;
 justify-content:center;
 
-background:linear-gradient(
+background:
+linear-gradient(
 135deg,
 #102A5E,
 #2563EB
 );
 
 color:white;
+
 font-weight:800;
+
 border-radius:16px;
+
 margin-bottom:18px;
+
 }
 
 .question h3{
+
 font-size:22px;
-margin-bottom:18px;
+
 line-height:1.5;
+
+margin-bottom:18px;
+
 }
 
 .required{
@@ -124,10 +152,12 @@ color:#ff4d6d;
 }
 
 .option{
+
 display:flex;
 align-items:center;
 
 padding:16px;
+
 margin-bottom:12px;
 
 background:#F8FAFF;
@@ -137,29 +167,51 @@ border:2px solid #E8EEF8;
 border-radius:18px;
 
 cursor:pointer;
-}
 
-.option input{
-margin-right:12px;
-transform:scale(1.15);
-accent-color:#102A5E;
+transition:.25s;
+
 }
 
 .option:hover{
+
 border-color:#2563EB;
+
+transform:translateY(-2px);
+
+}
+
+.option input{
+
+margin-right:12px;
+
+transform:scale(1.15);
+
+accent-color:#102A5E;
+
 }
 
 textarea{
+
 width:100%;
-min-height:160px;
+
+min-height:170px;
+
 padding:18px;
+
 font-size:15px;
+
 border-radius:18px;
+
 border:1px solid #DDE4F3;
+
+resize:vertical;
+
 }
 
 button{
-background:linear-gradient(
+
+background:
+linear-gradient(
 135deg,
 #102A5E,
 #2563EB
@@ -169,7 +221,7 @@ color:white;
 
 border:none;
 
-padding:18px 48px;
+padding:18px 50px;
 
 font-size:16px;
 
@@ -178,28 +230,28 @@ font-weight:800;
 border-radius:999px;
 
 cursor:pointer;
+
 }
 
 .center{
 text-align:center;
-margin-top:20px;
+margin-top:25px;
 }
 
 .footer{
-text-align:center;
-margin-top:30px;
-color:#64748B;
-}
 
-input:invalid,
-textarea:invalid{
-outline:none;
+text-align:center;
+
+margin-top:30px;
+
+color:#64748B;
+
 }
 
 @media(max-width:768px){
 
 .hero h1{
-font-size:38px;
+font-size:34px;
 }
 
 .container{
@@ -219,13 +271,18 @@ font-size:18px;
 <body>
 
 <div class="logo">
-AJIO
+
+<img
+src="ajio-logo.png"
+alt="AJIO Logo"
+class="ajio-logo">
+
 </div>
 
 <div class="hero">
 
 <h1>
-Help us improve your AJIO experience</span>
+Help Us Improve Your AJIO Experience
 </h1>
 
 
@@ -235,9 +292,11 @@ Help us improve your AJIO experience</span>
 
 <form action="https://formspree.io/f/xredkzlj" method="POST">
 
-<input type="hidden"
+<input
+type="hidden"
 name="_subject"
 value="New AJIO Survey Response">
+
 <!-- Q1 -->
 
 <div class="question">
@@ -247,39 +306,25 @@ value="New AJIO Survey Response">
 <h3>
 What do you like most about shopping on AJIO?
 <span class="required">*</span>
-(Select at least 1)
 </h3>
 
 <label class="option">
-<input
-type="checkbox"
-name="liked_features"
-value="Brands & Styles"
-required>
+<input type="checkbox" name="liked_features" value="Brands & Styles" required>
 Brands & Styles
 </label>
 
 <label class="option">
-<input
-type="checkbox"
-name="liked_features"
-value="Great Deals">
+<input type="checkbox" name="liked_features" value="Great Deals">
 Great Deals
 </label>
 
 <label class="option">
-<input
-type="checkbox"
-name="liked_features"
-value="Easy Shopping">
+<input type="checkbox" name="liked_features" value="Easy Shopping">
 Easy Shopping
 </label>
 
 <label class="option">
-<input
-type="checkbox"
-name="liked_features"
-value="Quality & Trust">
+<input type="checkbox" name="liked_features" value="Quality & Trust">
 Quality & Trust
 </label>
 
@@ -288,17 +333,8 @@ Quality & Trust
 <!-- Q2 -->
 
 <div class="question">
-
-<div class="qnum">2</div>
-
-<h3>
-What is the one thing AJIO should improve the most?
-<span class="required">*</span>
-</h3>
-
-<label class="option">
-<input
-type="radio"
+  <label class="option">
+<input type="radio"
 name="improvement_area"
 value="Delivery"
 required>
@@ -306,32 +342,28 @@ Delivery
 </label>
 
 <label class="option">
-<input
-type="radio"
+<input type="radio"
 name="improvement_area"
 value="Discounts & Rewards">
 Discounts & Rewards
 </label>
 
 <label class="option">
-<input
-type="radio"
+<input type="radio"
 name="improvement_area"
 value="Recommendations & Sizing">
 Recommendations & Sizing
 </label>
 
 <label class="option">
-<input
-type="radio"
+<input type="radio"
 name="improvement_area"
 value="Quality, Returns & Refunds">
 Quality, Returns & Refunds
 </label>
 
 <label class="option">
-<input
-type="radio"
+<input type="radio"
 name="improvement_area"
 value="No major improvement needed">
 No major improvement needed
@@ -346,49 +378,44 @@ No major improvement needed
 <div class="qnum">3</div>
 
 <h3>
-If you ever need help, what would improve your experience the most?
+What is the biggest challenge when returning or exchanging a product?
 <span class="required">*</span>
 </h3>
 
 <label class="option">
-<input
-type="radio"
-name="customer_support"
-value="Faster Replies"
+<input type="checkbox"
+name="returns_experience"
+value="Pickup Takes Time"
 required>
-Faster Replies
+Pickup Takes Time
 </label>
 
 <label class="option">
-<input
-type="radio"
-name="customer_support"
-value="Faster Solutions">
-Faster Solutions
+<input type="checkbox"
+name="returns_experience"
+value="Refund Takes Time">
+Refund Takes Time
 </label>
 
 <label class="option">
-<input
-type="radio"
-name="customer_support"
-value="Better Updates">
-Better Updates
+<input type="checkbox"
+name="returns_experience"
+value="Not Enough Updates">
+Not Enough Updates
 </label>
 
 <label class="option">
-<input
-type="radio"
-name="customer_support"
-value="Premium Support">
-Premium Support
+<input type="checkbox"
+name="returns_experience"
+value="Return Process is Confusing">
+Return Process is Confusing
 </label>
 
 <label class="option">
-<input
-type="radio"
-name="customer_support"
-value="Satisfied">
-I am satisfied with the current support experience
+<input type="checkbox"
+name="returns_experience"
+value="No Issues">
+I have not faced any issues with returns or exchanges
 </label>
 
 </div>
@@ -400,68 +427,12 @@ I am satisfied with the current support experience
 <div class="qnum">4</div>
 
 <h3>
-What is the biggest challenge when returning or exchanging a product?
-<span class="required">*</span>
-(Select at least 1)
-</h3>
-
-<label class="option">
-<input
-type="checkbox"
-name="returns_experience"
-value="Pickup Takes Time"
-required>
-Pickup Takes Time
-</label>
-
-<label class="option">
-<input
-type="checkbox"
-name="returns_experience"
-value="Refund Takes Time">
-Refund Takes Time
-</label>
-
-<label class="option">
-<input
-type="checkbox"
-name="returns_experience"
-value="Not Enough Updates">
-Not Enough Updates
-</label>
-
-<label class="option">
-<input
-type="checkbox"
-name="returns_experience"
-value="Return Process is Confusing">
-Return Process is Confusing
-</label>
-
-<label class="option">
-<input
-type="checkbox"
-name="returns_experience"
-value="No Issues">
-I have not faced any issues with returns or exchanges
-</label>
-
-</div>
-<!-- Q5 -->
-
-<div class="question">
-
-<div class="qnum">5</div>
-
-<h3>
 Which new feature would interest you the most?
 <span class="required">*</span>
-(Select up to 2)
 </h3>
 
 <label class="option">
-<input
-type="checkbox"
+<input type="checkbox"
 name="new_features"
 value="Faster Delivery"
 required>
@@ -469,32 +440,28 @@ Faster Delivery
 </label>
 
 <label class="option">
-<input
-type="checkbox"
+<input type="checkbox"
 name="new_features"
 value="Premium Membership">
 Premium Membership
 </label>
 
 <label class="option">
-<input
-type="checkbox"
+<input type="checkbox"
 name="new_features"
 value="AI Styling & Try-On">
 AI Styling & Try-On
 </label>
 
 <label class="option">
-<input
-type="checkbox"
+<input type="checkbox"
 name="new_features"
 value="Easier Returns & Support">
 Easier Returns & Support
 </label>
 
 <label class="option">
-<input
-type="checkbox"
+<input type="checkbox"
 name="new_features"
 value="Satisfied">
 I am satisfied with the current features
@@ -502,11 +469,17 @@ I am satisfied with the current features
 
 </div>
 
-<!-- Q6 -->
+<div class="qnum">2</div>
+
+<h3>
+What is the one thing AJIO should improve the most?
+<span class="required">*</span>
+</h3
+  <!-- Q5 -->
 
 <div class="question">
 
-<div class="qnum">6</div>
+<div class="qnum">5</div>
 
 <h3>
 Would you pay for a premium membership with benefits like faster delivery, special offers and priority support?
@@ -556,11 +529,11 @@ I am satisfied with the current experience and do not need additional benefits
 
 </div>
 
-<!-- Q7 -->
+<!-- Q6 -->
 
 <div class="question">
 
-<div class="qnum">7</div>
+<div class="qnum">6</div>
 
 <h3>
 If you could change one thing about AJIO, what would it be?
@@ -574,14 +547,14 @@ required></textarea>
 
 </div>
 
-<!-- Thank You Redirect -->
+<!-- Redirect After Submit -->
 
 <input
 type="hidden"
 name="_next"
 value="https://snayinijoardar.github.io/Ajio-Customer-Survey/thankyou.html">
 
-<!-- Submit -->
+<!-- Submit Button -->
 
 <div class="center">
 
@@ -599,7 +572,7 @@ Submit Feedback →
 
 </div>
 
-<!-- Validation Script -->
+<!-- Checkbox Limit Validation -->
 
 <script>
 
