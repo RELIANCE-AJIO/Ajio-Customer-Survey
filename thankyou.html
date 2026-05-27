@@ -18,59 +18,75 @@ body{
     display:flex;
     justify-content:center;
     align-items:center;
-    background:linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)),
+
+    background:
+    linear-gradient(rgba(0,0,40,0.75),
+    rgba(0,0,40,0.75)),
     url('ajio-bg.png.png');
+
     background-size:cover;
     background-position:center;
-    padding:20px;
+    background-repeat:no-repeat;
 }
 
 .thankyou-card{
-    background:#fff;
-    width:100%;
-    max-width:700px;
-    padding:60px 40px;
+    background:#ffffff;
+    width:90%;
+    max-width:850px;
+    padding:60px;
     border-radius:25px;
     text-align:center;
     box-shadow:0 15px 40px rgba(0,0,0,0.25);
 }
 
 .logo{
-    width:90px;
-    margin-bottom:20px;
-}
-
-.tick{
-    width:90px;
-    height:90px;
-    margin:0 auto 25px;
-    background:#28a745;
-    color:#fff;
-    border-radius:50%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:50px;
-    font-weight:bold;
+    width:110px;
+    margin-bottom:25px;
 }
 
 h1{
-    color:#0b2f7a;
-    font-size:42px;
-    margin-bottom:15px;
+    color:#082d7d;
+    font-size:54px;
+    margin-bottom:25px;
+    font-weight:700;
 }
 
 .message{
-    color:#555;
-    font-size:18px;
+    color:#444;
+    font-size:28px;
     line-height:1.8;
+    margin-bottom:30px;
 }
 
 .footer{
-    margin-top:30px;
-    color:#0b2f7a;
+    margin-top:20px;
+    color:#082d7d;
+    font-size:22px;
     font-weight:600;
-    font-size:16px;
+}
+
+@media(max-width:768px){
+
+.thankyou-card{
+    padding:35px 25px;
+}
+
+.logo{
+    width:85px;
+}
+
+h1{
+    font-size:38px;
+}
+
+.message{
+    font-size:20px;
+}
+
+.footer{
+    font-size:18px;
+}
+
 }
 </style>
 </head>
@@ -79,16 +95,14 @@ h1{
 
 <div class="thankyou-card">
 
+    <!-- AJIO LOGO -->
     <img src="ajio-logo.png.png" alt="AJIO Logo" class="logo">
-
-    <div class="tick">✓</div>
 
     <h1>Thank You!</h1>
 
     <div class="message">
         Your response has been submitted successfully.<br><br>
-        We sincerely appreciate you taking the time to share your feedback.<br>
-        Your valuable suggestions will help us improve and enhance the AJIO shopping experience.
+
     </div>
 
     <div class="footer">
