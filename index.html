@@ -126,11 +126,13 @@ margin-bottom:18px;
 .question h3{
 
 font-size:22px;
-
 line-height:1.5;
-
 margin-bottom:18px;
 
+}
+
+.required{
+color:red;
 }
 
 .option{
@@ -155,27 +157,19 @@ transition:.25s;
 }
 
 .option:hover{
-
 border-color:#2563EB;
-
 transform:translateY(-2px);
-
 }
 
 .option input{
-
 margin-right:12px;
-
 transform:scale(1.15);
-
 accent-color:#102A5E;
-
 }
 
 textarea{
 
 width:100%;
-
 min-height:170px;
 
 padding:18px;
@@ -267,12 +261,7 @@ Help Us Improve Your AJIO Experience
 
 <div class="container">
 
-<form action="https://formspree.io/f/xredkzlj" method="POST">
-
-<input
-type="hidden"
-name="_subject"
-value="New AJIO Survey Response">
+<form id="surveyForm">
 
 <!-- Q1 -->
 
@@ -281,30 +270,32 @@ value="New AJIO Survey Response">
 <div class="qnum">1</div>
 
 <h3>
-What do you like most about shopping on AJIO? <span class="required">*</span>
+What do you like most about shopping on AJIO?
+<span class="required">*</span>
 </h3>
-  
+
 <label class="option">
-<input type="checkbox" name="liked_features" value="Brands & Styles">
+<input type="radio" name="liked_features" value="Brands & Styles">
 Brands & Styles
 </label>
 
 <label class="option">
-<input type="checkbox" name="liked_features" value="Great Deals">
+<input type="radio" name="liked_features" value="Great Deals">
 Great Deals
 </label>
 
 <label class="option">
-<input type="checkbox" name="liked_features" value="Easy Shopping">
+<input type="radio" name="liked_features" value="Easy Shopping">
 Easy Shopping
 </label>
 
 <label class="option">
-<input type="checkbox" name="liked_features" value="Quality & Trust">
+<input type="radio" name="liked_features" value="Quality & Trust">
 Quality & Trust
 </label>
 
 </div>
+
 <!-- Q2 -->
 
 <div class="question">
@@ -312,7 +303,8 @@ Quality & Trust
 <div class="qnum">2</div>
 
 <h3>
-What is the one thing AJIO should improve the most?<span class="required">*</span>
+What is the one thing AJIO should improve the most?
+<span class="required">*</span>
 </h3>
 
 <label class="option">
@@ -351,7 +343,6 @@ No major improvement needed
 </label>
 
 </div>
-
 <!-- Q3 -->
 
 <div class="question">
@@ -359,39 +350,45 @@ No major improvement needed
 <div class="qnum">3</div>
 
 <h3>
-Which new feature would interest you the most? <span class="required">*</span>
+What is the biggest challenge when returning or exchanging a product?
+<span class="required">*</span>
 </h3>
 
 <label class="option">
-<input type="checkbox"
+<input
+type="radio"
 name="returns_experience"
 value="Pickup Takes Time">
 Pickup Takes Time
 </label>
 
 <label class="option">
-<input type="checkbox"
+<input
+type="radio"
 name="returns_experience"
 value="Refund Takes Time">
 Refund Takes Time
 </label>
 
 <label class="option">
-<input type="checkbox"
+<input
+type="radio"
 name="returns_experience"
 value="Not Enough Updates">
 Not Enough Updates
 </label>
 
 <label class="option">
-<input type="checkbox"
+<input
+type="radio"
 name="returns_experience"
 value="Return Process is Confusing">
 Return Process is Confusing
 </label>
 
 <label class="option">
-<input type="checkbox"
+<input
+type="radio"
 name="returns_experience"
 value="No Issues">
 I have not faced any issues with returns or exchanges
@@ -406,45 +403,52 @@ I have not faced any issues with returns or exchanges
 <div class="qnum">4</div>
 
 <h3>
-Which new feature would interest you the most?<span class="required">*</span>
+Which new feature would interest you the most?
+<span class="required">*</span>
 </h3>
 
 <label class="option">
-<input type="checkbox"
+<input
+type="radio"
 name="new_features"
 value="Faster Delivery">
 Faster Delivery
 </label>
 
 <label class="option">
-<input type="checkbox"
+<input
+type="radio"
 name="new_features"
 value="Premium Membership">
 Premium Membership
 </label>
 
 <label class="option">
-<input type="checkbox"
+<input
+type="radio"
 name="new_features"
 value="AI Styling & Try-On">
 AI Styling & Try-On
 </label>
 
 <label class="option">
-<input type="checkbox"
+<input
+type="radio"
 name="new_features"
 value="Easier Returns & Support">
 Easier Returns & Support
 </label>
 
 <label class="option">
-<input type="checkbox"
+<input
+type="radio"
 name="new_features"
 value="Satisfied">
 I am satisfied with the current features
 </label>
 
 </div>
+
 <!-- Q5 -->
 
 <div class="question">
@@ -452,7 +456,8 @@ I am satisfied with the current features
 <div class="qnum">5</div>
 
 <h3>
-Would you pay for a premium membership with benefits like faster delivery, special offers and priority support?<span class="required">*</span>
+Would you pay for a premium membership with benefits like faster delivery, special offers and priority support?
+<span class="required">*</span>
 </h3>
 
 <label class="option">
@@ -496,7 +501,6 @@ I am satisfied with the current experience and do not need additional benefits
 </label>
 
 </div>
-
 <!-- Q6 -->
 
 <div class="question">
@@ -504,7 +508,8 @@ I am satisfied with the current experience and do not need additional benefits
 <div class="qnum">6</div>
 
 <h3>
-If you could change one thing about AJIO, what would it be?<span class="required">*</span>
+If you could change one thing about AJIO, what would it be?
+<span class="required">*</span>
 </h3>
 
 <textarea
@@ -512,13 +517,6 @@ name="final_suggestion"
 placeholder="Share your thoughts, ideas or suggestions here..."></textarea>
 
 </div>
-
-<!-- Redirect After Submit -->
-
-<input
-type="hidden"
-name="_next"
-value="https://snayinijoardar.github.io/AJIO-Survey-Final/thankyou.html">
 
 <!-- Submit Button -->
 
@@ -529,55 +527,7 @@ Submit Feedback →
 </button>
 
 </div>
-<script>
 
-document.querySelector("form").addEventListener("submit", function(e){
-
-// Q1
-if(document.querySelectorAll('input[name="liked_features"]:checked').length === 0){
-    alert("Please answer Question 1.");
-    e.preventDefault();
-    return;
-}
-
-// Q2
-if(!document.querySelector('input[name="improvement_area"]:checked')){
-    alert("Please answer Question 2.");
-    e.preventDefault();
-    return;
-}
-
-// Q3
-if(document.querySelectorAll('input[name="returns_experience"]:checked').length === 0){
-    alert("Please answer Question 3.");
-    e.preventDefault();
-    return;
-}
-
-// Q4
-if(document.querySelectorAll('input[name="new_features"]:checked').length === 0){
-    alert("Please answer Question 4.");
-    e.preventDefault();
-    return;
-}
-
-// Q5
-if(!document.querySelector('input[name="premium_membership"]:checked')){
-    alert("Please answer Question 5.");
-    e.preventDefault();
-    return;
-}
-
-// Q6
-if(document.querySelector('textarea[name="final_suggestion"]').value.trim() === ""){
-    alert("Please answer Question 6.");
-    e.preventDefault();
-    return;
-}
-
-});
-
-</script>
 </form>
 
 <div class="footer">
@@ -585,6 +535,104 @@ if(document.querySelector('textarea[name="final_suggestion"]').value.trim() === 
 </div>
 
 </div>
+
+<script>
+
+document.getElementById("surveyForm").addEventListener("submit", async function(e){
+
+e.preventDefault();
+
+// Q1
+if(!document.querySelector('input[name="liked_features"]:checked')){
+alert("Please answer Question 1.");
+return;
+}
+
+// Q2
+if(!document.querySelector('input[name="improvement_area"]:checked')){
+alert("Please answer Question 2.");
+return;
+}
+
+// Q3
+if(!document.querySelector('input[name="returns_experience"]:checked')){
+alert("Please answer Question 3.");
+return;
+}
+
+// Q4
+if(!document.querySelector('input[name="new_features"]:checked')){
+alert("Please answer Question 4.");
+return;
+}
+
+// Q5
+if(!document.querySelector('input[name="premium_membership"]:checked')){
+alert("Please answer Question 5.");
+return;
+}
+
+// Q6
+if(document.querySelector('textarea[name="final_suggestion"]').value.trim()===""){
+alert("Please answer Question 6.");
+return;
+}
+
+const formData = new FormData();
+
+formData.append(
+"liked_features",
+document.querySelector('input[name="liked_features"]:checked').value
+);
+
+formData.append(
+"improvement_area",
+document.querySelector('input[name="improvement_area"]:checked').value
+);
+
+formData.append(
+"returns_experience",
+document.querySelector('input[name="returns_experience"]:checked').value
+);
+
+formData.append(
+"new_features",
+document.querySelector('input[name="new_features"]:checked').value
+);
+
+formData.append(
+"premium_membership",
+document.querySelector('input[name="premium_membership"]:checked').value
+);
+
+formData.append(
+"final_suggestion",
+document.querySelector('textarea[name="final_suggestion"]').value
+);
+
+try{
+
+await fetch(
+"https://script.google.com/macros/s/AKfycbzZUB2Mlw0_9F0bMS7vYOUlN1xRw69t1c22oEb7CJKdyt-u2wKXQBbMOGNS3kzIN8TkBA/exec",
+{
+method:"POST",
+body:formData
+}
+);
+
+alert("Thank you! Your response has been submitted successfully.");
+
+document.getElementById("surveyForm").reset();
+
+}catch(error){
+
+alert("Submission failed. Please try again.");
+
+}
+
+});
+
+</script>
 
 </body>
 
