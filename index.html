@@ -574,8 +574,17 @@ alert("Please answer Question 6.");
 return;
 }
 
+// Read Order ID from URL
+const params = new URLSearchParams(window.location.search);
+
+const orderId = params.get("oid") || "";
+
 const formData = new FormData();
 
+// Hidden Order ID
+formData.append("order_id", orderId);
+
+// Survey answers
 formData.append(
 "liked_features",
 document.querySelector('input[name="liked_features"]:checked').value
