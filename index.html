@@ -532,7 +532,77 @@ Submit Feedback →
 
 </div>
 
+```html
 <script>
+
+const SCRIPT_URL =
+"https://script.google.com/macros/s/AKfycbz58eNQ7dP2ydEwfG6Pjpn8t-CKAdudXOzr8lW5vDMxknAdjamAoTQ6AdDVetjwOhPmSw/exec";
+
+(async () => {
+
+const params = new URLSearchParams(window.location.search);
+
+const orderId = params.get("oid") || "";
+
+if(!orderId){
+
+document.body.innerHTML = `
+<div style="
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+font-family:Arial;
+text-align:center;
+">
+<div>
+<h1>Invalid Survey Link</h1>
+<p>Order ID is missing.</p>
+</div>
+</div>
+`;
+
+return;
+
+}
+
+try{
+
+const response = await fetch(
+`${SCRIPT_URL}?oid=${encodeURIComponent(orderId)}`
+);
+
+const result = await response.json();
+
+if(!result.allowed){
+
+document.body.innerHTML = `
+<div style="
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+font-family:Arial;
+text-align:center;
+">
+<div>
+<h1>Survey Already Submitted</h1>
+<p>This survey has already been completed.</p>
+</div>
+</div>
+`;
+
+return;
+
+}
+
+}catch(error){
+
+console.error(error);
+
+}
+
+})();
 
 document.getElementById("surveyForm").addEventListener("submit", async function(e){
 
@@ -574,17 +644,17 @@ alert("Please answer Question 6.");
 return;
 }
 
-// Read Order ID from URL
 const params = new URLSearchParams(window.location.search);
 
 const orderId = params.get("oid") || "";
 
 const formData = new FormData();
 
-// Hidden Order ID
-formData.append("order_id", orderId);
+formData.append(
+"order_id",
+orderId
+);
 
-// Survey answers
 formData.append(
 "liked_features",
 document.querySelector('input[name="liked_features"]:checked').value
@@ -617,19 +687,33 @@ document.querySelector('textarea[name="final_suggestion"]').value
 
 try{
 
-await fetch(
-"https://script.google.com/macros/s/AKfycbzZUB2Mlw0_9F0bMS7vYOUlN1xRw69t1c22oEb7CJKdyt-u2wKXQBbMOGNS3kzIN8TkBA/exec",
+const response = await fetch(
+SCRIPT_URL,
 {
 method:"POST",
 body:formData
 }
 );
 
+const result = await response.json();
+
+if(result.status === "duplicate"){
+
+alert(
+"This survey has already been submitted."
+);
+
+return;
+
+}
+
 window.location.href = "thankyou.html";
 
 }catch(error){
 
-alert("Submission failed. Please try again.");
+alert(
+"Submission failed. Please try again."
+);
 
 }
 
