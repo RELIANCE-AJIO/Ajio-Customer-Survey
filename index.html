@@ -707,7 +707,14 @@ return;
 }
 
 window.location.href = "thankyou.html";
+  
+}catch(error){
 
+console.error(error);
+
+alert("Submission failed: " + error.message);
+
+}
 });
 
 </script>
